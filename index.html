@@ -72,6 +72,26 @@
     border-radius:20px;
   }
 
+  .fullscreen-btn{
+    position:fixed;
+    top:10px;
+    right:10px;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.07);
+    border:1px solid var(--line);
+    border-radius:6px;
+    color:var(--text-dim);
+    cursor:pointer;
+    z-index:999;
+    padding:0;
+  }
+  .fullscreen-btn:hover{ background:rgba(255,255,255,0.14); color:var(--text); }
+  .fullscreen-btn svg{ width:15px; height:15px; display:block; }
+
   /* ---- Cards de Carteira / Produção (mesmo porte de Gerente/Serviços) ---- */
   .metric-card{
     flex:1 1 auto;
@@ -323,6 +343,48 @@
 </style>
 </head>
 <body>
+
+<button id="fsBtn" class="fullscreen-btn" title="Tela cheia" aria-label="Tela cheia" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path id="fsPath" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"></path></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('fsBtn');
+  var path = document.getElementById('fsPath');
+  var expandD = "M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5";
+  var collapseD = "M9 4H4v5M15 20h5v-5M20 9V4h-5M4 15v5h5";
+  function isFS(){
+    return !!(document.fullscreenElement || document.webkitFullscreenElement || document.webkitCurrentFullScreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+  }
+  function requestFS(el){
+    if (el.requestFullscreen) return el.requestFullscreen();
+    if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+    if (el.webkitRequestFullScreen) return el.webkitRequestFullScreen();
+    if (el.mozRequestFullScreen) return el.mozRequestFullScreen();
+    if (el.msRequestFullscreen) return el.msRequestFullscreen();
+  }
+  function exitFS(){
+    if (document.exitFullscreen) return document.exitFullscreen();
+    if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+    if (document.webkitCancelFullScreen) return document.webkitCancelFullScreen();
+    if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+    if (document.msExitFullscreen) return document.msExitFullscreen();
+  }
+  function updateIcon(){
+    path.setAttribute('d', isFS() ? collapseD : expandD);
+  }
+  btn.addEventListener('click', function(){
+    try{
+      if (!isFS()) { requestFS(document.documentElement); }
+      else { exitFS(); }
+    }catch(e){}
+  });
+  ['fullscreenchange','webkitfullscreenchange','mozfullscreenchange','MSFullscreenChange'].forEach(function(evt){
+    document.addEventListener(evt, updateIcon);
+  });
+  updateIcon();
+})();
+</script>
 
 <header>
   <div class="brand">
