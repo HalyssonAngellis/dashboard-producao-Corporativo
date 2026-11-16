@@ -437,17 +437,17 @@ footer{
       <div class="metric-card">
         <div class="metric-tile">
           <div class="label"><span class="dot" style="background:var(--violet)"></span>Clientes Ativos</div>
-          <div class="value num" id="clientesAtivos">1.121</div>
+          <div class="value num" id="clientesAtivos">1.118</div>
           <div class="sub">base ativa atual</div>
         </div>
         <div class="metric-tile">
           <div class="label"><span class="dot" style="background:var(--violet)"></span>Contratos Ativos</div>
-          <div class="value num" id="contratosAtivos">2.729</div>
+          <div class="value num" id="contratosAtivos">2.702</div>
           <div class="sub">base ativa atual</div>
         </div>
         <div class="metric-tile">
           <div class="label"><span class="dot" style="background:var(--violet)"></span>Carteira Ativa</div>
-          <div class="value num" id="carteiraAtiva">R$ 1.193.680,54</div>
+          <div class="value num" id="carteiraAtiva">R$ 1.189.478,34</div>
           <div class="sub">receita recorrente ativa</div>
         </div>
       </div>
@@ -525,10 +525,11 @@ footer{
   </div>
 </main>
 <footer>
-  Valores calculados a partir da coluna Delta (viabilidade, venda e churn) e da coluna Fidelização, restrita a linhas de venda/up-venda. Churn = cancelamento, detalhado por cliente, GC e motivo no card ao lado. Fonte: Book.xlsx (SharePoint). Atualizado em <span id="dataAtualizacao">12/11/2026 22:10</span>.
+  Valores calculados a partir da coluna Delta (viabilidade, venda e churn) e da coluna Fidelização, restrita a linhas de venda/up-venda. Churn = cancelamento, detalhado por cliente, GC e motivo no card ao lado. Fonte: Book.xlsx (SharePoint). Atualizado em <span id="dataAtualizacao">15/11/2026 21:11</span>.
 </footer>
-<script id="dashboard-data" type="application/json">{"viabQtd":32,"viabValor":3106.3,"vendaQtd":9,"vendaValor":7907.699999999999,"churnQtd":3,"churnValor":-1243.24,"fidelizacaoValor":7907.699999999999,"gcList":[{"nome":"VICTOR","viabQtd":18,"viabValor":1809.6999999999998,"vendaQtd":4,"vendaValor":5358.9},{"nome":"ADILSON","viabQtd":9,"viabValor":1106.6999999999998,"vendaQtd":2,"vendaValor":1558.9},{"nome":"GIANNA","viabQtd":5,"viabValor":189.9,"vendaQtd":3,"vendaValor":989.9}],"servList":[{"nome":"COMBO","qtd":2,"valor":4849},{"nome":"LINK DEDICADO + FIREWALL FORTINET","qtd":1,"valor":1399},{"nome":"SOHO","qtd":4,"valor":1169.7},{"nome":"DEDICADO","qtd":1,"valor":350},{"nome":"FONE","qtd":1,"valor":140}],"servTotalQtd":9,"servTotalValor":7907.7,"cancelList":[{"cliente":"AUTO PECAS PADRE CICERO LTDA","gc":"VICTOR","motivo":"MUDOU DE OPERADORA","valor":-700},{"cliente":"ABART ENGENHARIA E EXECUCAO LTDA","gc":"GIANNA","motivo":"Não Informado","valor":-179.9},{"cliente":"RENATA LUCENA SOARES","gc":"ADILSON","motivo":"Encerramento de contrato","valor":-363.34}],"cancelTotalQtd":3,"cancelTotalValor":-1243.24,"clientesAtivos":"1.121","contratosAtivos":"2.729","carteiraAtiva":"R$ 1.193.680,54","dataAtualizacao":"12/11/2026 22:10"}</script>
+<script id="dashboard-data" type="application/json">{"viabQtd":32,"viabValor":3106.3,"vendaQtd":9,"vendaValor":7907.699999999999,"churnQtd":3,"churnValor":-1243.24,"fidelizacaoValor":7907.699999999999,"gcList":[{"nome":"VICTOR","viabQtd":18,"viabValor":1809.6999999999998,"vendaQtd":4,"vendaValor":5358.9},{"nome":"ADILSON","viabQtd":9,"viabValor":1106.6999999999998,"vendaQtd":2,"vendaValor":1558.9},{"nome":"GIANNA","viabQtd":5,"viabValor":189.9,"vendaQtd":3,"vendaValor":989.9}],"servList":[{"nome":"COMBO","qtd":2,"valor":4849},{"nome":"LINK DEDICADO + FIREWALL FORTINET","qtd":1,"valor":1399},{"nome":"SOHO","qtd":4,"valor":1169.7},{"nome":"DEDICADO","qtd":1,"valor":350},{"nome":"FONE","qtd":1,"valor":140}],"servTotalQtd":9,"servTotalValor":7907.7,"cancelList":[{"cliente":"AUTO PECAS PADRE CICERO LTDA","gc":"VICTOR","motivo":"MUDOU DE OPERADORA","valor":-700},{"cliente":"ABART ENGENHARIA E EXECUCAO LTDA","gc":"GIANNA","motivo":"Não Informado","valor":-179.9},{"cliente":"RENATA LUCENA SOARES","gc":"ADILSON","motivo":"Encerramento de contrato","valor":-363.34}],"cancelTotalQtd":3,"cancelTotalValor":-1243.24,"clientesAtivos":"1.118","contratosAtivos":"2.702","carteiraAtiva":"R$ 1.189.478,34","dataAtualizacao":"15/11/2026 21:11"}</script>
 <script>
+
 
 
 
@@ -1403,6 +1404,7 @@ FS_BUTTON_BLOCK +
     root.DashboardTemplate = exportsObj;
   }
 })(typeof window !== "undefined" ? window : this);
+
 
 
 
